@@ -4,6 +4,13 @@ defineProps<{
   counter: number
 }>()
 const Text = 'const Text'
+
+function printSomethingInside() {
+  return "Something inside"
+}
+
+defineExpose({ printSomethingInside })
+
 </script>
 
 <template>
