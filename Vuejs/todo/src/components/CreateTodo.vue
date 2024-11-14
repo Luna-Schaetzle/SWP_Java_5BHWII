@@ -14,7 +14,7 @@ interface Todo {
   erledigt: boolean
 }
 
-const emit = defineEmits(['todo-created'])
+const emit = defineEmits(['back'])
 
 const title = ref('')
 const description = ref('')
@@ -73,6 +73,8 @@ async function createTodo() {
       </div>
       <button type="submit">Erstellen</button>
     </form>
+
+    <button @click="$emit('back')">Zurück</button>
   </div>
 </template>
 

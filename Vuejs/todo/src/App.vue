@@ -1,92 +1,61 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/todo">Todo</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <nav>
+    <RouterLink to="/" class="nav-link">Home</RouterLink>
+    <RouterLink to="/about" class="nav-link">About</RouterLink>
+    <RouterLink to="/todo" class="nav-link">Todo</RouterLink>
+  </nav>
+  <main>
+    <RouterView />
+  </main>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
+/* Navbar Styling */
 nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333; /* Dunkler Hintergrund */
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+/* Links Styling */
+.nav-link {
+  color: #ffffff; /* Weißer Text */
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  border-radius: 5px;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+/* Hover-Effekte */
+.nav-link:hover {
+  background-color: #4caf50; /* Grüner Hover-Hintergrund */
+  color: #ffffff;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+.nav-link.router-link-exact-active {
+  background-color: #45a049; /* Aktiver Link Hintergrund */
 }
 
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+/* Main Content Abstand unter der Navbar */
+main {
+  font-family: Arial, sans-serif;
+  background-color: #45a049 /* Grüner Hintergrund */;
 }
 </style>

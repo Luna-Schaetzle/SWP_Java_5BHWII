@@ -48,7 +48,7 @@ function createTodo() {
 </script>
 
 <template>
-  <div>
+  <div class="todo-container">
     <h1>Alle Todos</h1>
     <button @click="createTodo">Neues Todo erstellen</button>
     <ul>
@@ -73,59 +73,113 @@ function createTodo() {
 </template>
 
 <style scoped>
-h1 {
-  text-align: center;
-  color: #333;
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  max-width: 100%;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #eef2f6;
 }
 
+/* Allgemeiner Button-Stil */
 button {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  font-size: 1em;
-  background-color: #28a745;
-  color: white;
+  background-color: #5b8def;
+  color: #fff;
+  padding: 12px 24px;
+  margin-top: 15px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(91, 141, 239, 0.3);
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 button:hover {
-  background-color: #218838;
+  background-color: #497ace;
+  box-shadow: 0 6px 16px rgba(91, 141, 239, 0.4);
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+button:active {
+  background-color: #3b65b1;
+  box-shadow: 0 3px 8px rgba(91, 141, 239, 0.2);
 }
 
-li {
-  display: flex;
-  align-items: center;
-  padding: 12px;
-  border-bottom: 1px solid #ddd;
+/* Stil für Todo-Liste */
+.todo-list {
+  width: 100%;
+  max-width: 800px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 10px 0;
+  margin: 0;
+  list-style: none;
 }
 
-li:hover {
-  background-color: #f9f9f9;
+.todo-item {
+  padding: 20px;
+  border-bottom: 1px solid #e0e6ed;
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
-input[type='checkbox'] {
-  margin-right: 15px;
-  transform: scale(1.2);
+.todo-item:hover {
+  background-color: #f7faff;
+  transform: translateY(-2px);
 }
 
-span {
-  flex-grow: 1;
-  font-size: 1.1em;
-  color: #555;
+.todo-item:last-child {
+  border-bottom: none;
 }
 
-span:hover {
-  text-decoration: underline;
+/* Einzelansicht und Erstellansicht Stil */
+.single-todo,
+.create-todo {
+  width: 100%;
+  max-width: 600px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  color: #444;
+  transition: box-shadow 0.3s ease;
 }
 
-span[style*='line-through'] {
-  color: #999;
+.single-todo:hover,
+.create-todo:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 768px) {
+  main {
+    padding: 50px;
+  }
+
+  .todo-list,
+  .single-todo,
+  .create-todo {
+    max-width: 700px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .todo-list,
+  .single-todo,
+  .create-todo {
+    max-width: 1000px;
+  }
 }
 </style>
