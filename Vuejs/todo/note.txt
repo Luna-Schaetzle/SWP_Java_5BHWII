@@ -1,0 +1,11 @@
+We have a Mok server powered by JSON-Server
+
+INFO unter:
+https://github.com/typicode/json-server/tree/v0
+
+zum Ausführen:
+json-server --watch db.json
+
+
+Ist ein Mok server der einfach die JSON zur verfügung stellt mit all den gängigen HTTP Methoden. 
+

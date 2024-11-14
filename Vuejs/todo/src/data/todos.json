@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Einkaufen",
+    "description": "Milch, Brot, Käse kaufen",
+    "dueDate": "2023-10-15",
+    "location": "Supermarkt",
+    "person": "Max Mustermann",
+    "category": "Einkauf",
+    "erledigt": false
+  },
+  {
+    "id": 2,
+    "title": "Projektmeeting",
+    "description": "Mit dem Team über das neue Projekt sprechen",
+    "dueDate": "2023-10-20",
+    "location": "Büro",
+    "person": "Anna Müller",
+    "category": "Arbeit",
+    "erledigt": false
+  },
+  {
+    "id": 3,
+    "title": "Arzttermin",
+    "description": "Routineuntersuchung um 15:00 Uhr",
+    "dueDate": "2023-10-25",
+    "location": "Klinik",
+    "person": "Dr. Schmidt",
+    "category": "Gesundheit",
+    "erledigt": false
+  }
+]
