@@ -36,7 +36,7 @@ onMounted(() => {
 
 async function updateTodo(todo: Todo) {
   try {
-    await axios.put(`http://localhost:3000/todos/${todo.id}`, todo)
+    await axios.put(`http://localhost:3000/todos?id=eq.${todo.id}`, todo)
   } catch (error) {
     console.error('Fehler beim Aktualisieren des Todos:', error)
   }

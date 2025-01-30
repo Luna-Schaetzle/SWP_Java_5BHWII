@@ -18,8 +18,13 @@ const emit = defineEmits(['back'])
 
 async function deleteTodo() {
   try {
-    await axios.delete(`http://localhost:3000/todos/${props.todo.id}`)
-    emit('back')
+    // In PostgREST wird der Filter über Query-Parameter gesetzt
+    await axios.delete(`http://localhost:3000/todos?id=eq.${props.todo.id}`, {
+      headers: {
+        'Content-Type': 'application/json', // Header für PostgREST
+      },
+    })
+    emit('back') // Zurück navigieren oder Todos neu laden
   } catch (error) {
     console.error('Fehler beim Löschen des Todos:', error)
   }
